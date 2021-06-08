@@ -1,0 +1,67 @@
+MOOtcan Changelog
+-----------------
+
+Releases by Jan Rune Holmevik
+
+30. September 2001
+
+	MOOTcan-0.50
+
+	* This is an early experimental release. It is recommended only for sites that need support for browsers running under Mac OS X 10.1. Much work remains before this version is fully optimized and feature complete. 
+
+	* Rewrote event handling routines in CommandTextField.java and ControlPanel.java to use Java 1.1 event handling instead of Java 1.0. The Java 1.1 TextArea is now used exclusively. This was done to add support for browsers running Java 2 VMs under MacOS X and possibly other platforms. The downside of this change is that older Java 1.0 based versions of Netscape under MacOS 8/9 will no longer be able to run MOOtcan without the MRJ-Plugin installed.
+
+	* Removed class Modes.java since new event handling system has been implemented.
+
+	* Rewrote calls to all deprecated methods throughout the program.
+
+	* It is not generally recommended to mix Java 1.0 and Java 1.1 code in a program so I cleaned out as much 1.0 code as I could. The rest will have to wait.
+
+	* Up arrow and down arrow can now be used for history navigation in CommandTextField.java. Should work in all browsers.
+
+	* Removed package statements from all classes. Couldn't see that these serve any purpose in this program.
+
+	* Since we no longer need to worry about Java 1.0 browsers, I'm now using jar to wrap the applet into an archive. The loadtime should improve quite a bit now since the browser no longer has to make several http connections to download all the program classes. 
+
+	* Upped the max character display of UserOutputArea to 25.000 characters. 	
+
+	* Removed some debugging code from various classes.
+
+	* Generated new and updated JavaDoc Documentation.
+
+31. March 2001
+
+	MOOtcan-0.1.20
+		
+		* modified MOOParser.java so that the URL token sent from the MOO is not actually displayed to the user.
+		* implemented support for showing URLs in a new window in addition to the default web frame. 
+
+Releases by Sindre Sørensen.
+
+27. October 1999
+
+	MOOtcan-0.1.16
+
+		* fixes modes to not issue a command if nothing in addition to command is
+			entered.
+
+		* first checkbox is always enabled
+
+
+30. September 1999
+
+	MOOtcan-0.1.12
+
+		* Changelog started
+		
+		* new button to allow choosing between normal / talk / emote - modes
+		
+		* inputarea: pressing page down will give a new blank line, but keep the old
+			one	in history for later usage
+
+		* users will be told when connection can't be made, due to firewalls etc
+		
+		* compability with java-1.0.2 is probably good
+
+		* Page Up / Page Down works in all browsers
+	

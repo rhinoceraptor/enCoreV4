@@ -1,0 +1,94 @@
+RUNNING:
+
+
+to get the applet running against your moo you need to do three things:
+
+  - unpack the archive
+  - put all the files in it on _the same server_ that the MOO is running on
+	- if you are using enCore Xpress 2.x:
+			- run '@configure-core' as wizard to set the path of mootcan.jar
+  - if you are not using enCore Xpress 2.x:
+			- open main.html in your browser
+
+
+you may need to edit the bottom.html file if the default settings doesn't match
+your MOOs setup. these are only some of the parameters; see bottom.html for
+all parameters. (the .html-files and .cgi-file are examples of how to launch
+the applet):
+
+    <PARAM NAME="hostname" VALUE="examplemoo.somedomain.org">
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  optionally put the hostname of your MOO here.
+                                  default = the server the applet is served from
+
+    <PARAM NAME="port" VALUE="7777">
+                              ^^^^
+                              the port number your MOO is accepting connections to
+                              default = 7777
+
+    <PARAM NAME="MOOname" VALUE="ExampleMOO">
+                                 ^^^^^^^^^^
+                                 the name of the MOO that you will connect the
+                                 client to
+
+
+
+
+
+COMMON PROBLEMS:
+
+Q:   the client says something like "security exception" when I try to connect
+to the MOO from my browser!
+
+A1:  this is a security feature with java in most browsers. they will not
+allow you to connect to anywhere else than where the applet is retrieved from.
+(the .class files and the MOO need to be on the same machine) if you don't have
+an account on the machine that the MOO is running on, you could contact the MOO
+administrators and ask them to install it on their web-server.
+
+A2:  it may help setting the hostname value to the hostname that your
+web-server is really running on. (as explained at the top of this document).
+
+A2:  sun's AppletViewer has less strict security rules. (it's in JRE, available
+from http://java.sun.com) load bottom.html in AppletViewer. AppletViewer might
+not tolerate the size given in percentages in the .html - file. if this is true
+with your appletviewer, you need to enter reasonable pixel-values (like
+width=700, heigth= 500) in bottom.html. 
+
+
+Q:   when I resize my browsers window, some of the applet's area is out of reach!
+
+A:   this problem is seen in many browsers. the browser is supposed to tell the
+applet to resize itself. this does not always happen. until the browser
+manufacturers fix this problem, you'll have to accept the initial size of the
+applet. I would be happy if anybody could tell me about a workaround for this
+problem.
+
+
+Q:   when trying to run the applet, my browser crashes!
+
+A:   I have tried to make the applet as stable as possible. if, however, the
+applet had bugs it should not make browsers crash anyway. you may try upgrading
+your browser, or installing more RAM in your machine.
+
+
+Q:   when my browser crashes, my operating system crashes, too!
+
+A:   this should not happen (and is not the browser's, nor java's fault) one
+way to solve this problem is to get a more stable operating system. many
+people are happy with GNU/linux. (read more at http://www.linux.org)
+
+
+
+COMPILING
+
+if you'd like to compile the classes yourself (not necessary, unless you modified anything):
+
+to compile:
+
+    cd mootcan
+    javac *.java
+    jar cvf mootcan.jar *.class
+
+please refer to the javadoc files in docs/ for more information.
+

@@ -1,0 +1,4 @@
+Copyright 1999-2001. All rights reserved.
+
+Sindre Sørensen <sindre.sorensen@erasmus.uib.no>
+Jan Rune Holmevik. <jan@mac.com>

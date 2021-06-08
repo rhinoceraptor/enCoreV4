@@ -1,0 +1,21 @@
+/*Default style sheet for Xpress Web Applications */
+
+/*Jan Rune Holmevik, 4/3/01 */
+
+/* Body definitions */
+
+BODY, P, TD { color: Black; font-family: Sans-Serif; font-size: 14px; background-color: White }
+DIV.Title { color: Black; font-size: 24px; background-color: Silver }
+DIV.SubTitle { color: Black; font-size: 18px; background-color: Silver }
+PRE { font-family: Monospace; font-size: 12px }
+
+/* Form element definitions */
+TEXTAREA { font-family: Monospace; font-size: 12px }
+
+/* Link definitions */
+A { font-family: Sans-Serif; font-size: 14px; text-decoration: none }
+A:link { color: Blue }
+A:visited { color: Purple }
+A:hover { color: Red }
+
+/*End style sheet*/

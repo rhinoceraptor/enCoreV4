@@ -1,0 +1,41 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive 4">
+		<title>enCore Installation</title>
+		<meta name="authors" content="Jan Rune Holmevik and Cynthia Haynes">
+		<meta name="keywords" content="enCore, enCore Xpress, MOO, Open Source Software, Free Software">
+		<link rel="STYLESHEET" type="text/css" href="encore.css">
+	</head>
+
+	<body>
+		<h1>enCore Installation</h1>
+		<p></p>
+		<h3>Introduction</h3>
+		<p>enCore requires that you have a web server such as Apache running on the same machine as the MOO server. </p>
+		<p>The installation instructions below have been tested under Sun Solaris, and Mac OS X, but they should work similarly on other Unix systems such as Linux and BSD. If you are running your MOO under a non-Unix operating system such as Windows NT, you must adapt the steps below to fit your operating system requirements.</p>
+		<p>&nbsp;</p>
+		<h3>How to Install a New enCore MOO</h3>
+		<p>1) Create a new directory in your UNIX home directory and name it <i>moo.</i> Download the file <i>enCore-latest.tar.gz </i>to the new moo directory. Make sure to use the binary transfer mode.</p>
+		<p>2) Unzip and install the archive using <i>gzip</i> and <i>tar</i> The following commands should work on all Unix systems:</p>
+		<pre><tt>gzip enCore-latest.tar.gz</tt></pre>
+		<pre>tar -xvfp enCore-latest.tar</pre>
+		<p>3) Move the enCore database file, <i>enCore.db </i>from the new encore directory that was created by tar to your moo directory.</p>
+		<pre>mv $HOME/moo/encore/enCore.db $HOME/moo</pre>
+		<p>4) Move the <i>encore directory</i> to the root level of your web server's document directory, or to your <i>public_html</i> directory. Please note that if you choose to use your public_html directory, it must be located on the same machine that is running the MOO.</p>
+		<pre>mv encore $HOME/public_html</pre>
+		<p>5) Download the appropriate MOO server binaries for your system from the enCore FTP archive, or download and compile the LambdaMOO server. See Chapter 5 in <i>High Wired: On the Design, Use, and Theory of Educational MOOs</i> for details on how to compile a MOO server.</p>
+		<p>6) Start up your MOO and log in as wizard. No password is necessary the first time you log in, but once you are connected you should immediately type '@newpassword somepassword' in order to set one. Perform the core-setup procedure by typing @configure. You should customize all relevant settings in the configure-menu, and pay special attention to the setting called Base URL. This is where you must type a URL pointing to the new encore directory. To go with the example above, you should type something like:</p>
+		<p><tt>http://someserver.somesite.edu/~user/encore/</tt></p>
+		<p>7) Point your web browser to port 7000 on your machine and log in with Xpress.</p>
+		<pre>http://someserver.somesite.edu:7000</pre>
+		<p>8) If you wish to install the optional VASE file upload utility please see instructions in the file vase.cgi which youll find in the directory /encore/vase</p>
+		<p></p>
+		<h5>
+		<hr noshade size="3">
+		</h5>
+		<p class="footer">Copyright &copy; 1997-2004, Jan Rune Holmevik and Cynthia Haynes. Updated <csobj w="96" h="13" t="DateTime" format="MedDate" region="0">Thu, Jan 1, 2004</csobj>
+	</body>
+
+</html>
